@@ -1,0 +1,44 @@
+# Sorteio de Números com Contagem
+import random
+bloco_impar = ["1", "7", "11", "93", "29", "33", "87", "9", "67", "15"] 
+bloco_par = ["2", "6", "8", "18", "22", "10", "20", "44", "32", "20"]
+
+contador_par = {}
+contador_impar = {}
+
+def atualizar_contador(n , contador):
+    if n in contador:
+        contador[n] += 1
+    else:
+        contador[n] = 1
+    
+
+for i in range(20):    # Quantidade de vezes para fazer o sorteio
+    numero = str(input("Sortear Número ímpar (1) ou par (2)? ").lower())
+
+    if numero == "impar" or numero == "1":
+        n_sorteado = random.choice(bloco_impar)
+        atualizar_contador(n_sorteado, contador_impar)
+        print(f"O número sorteado foi: {n_sorteado}")
+    elif numero == "par" or numero == "2":
+        n_sorteado = random.choice(bloco_par)
+        atualizar_contador(n_sorteado, contador_par)
+        print(f"O número sorteado foi: {n_sorteado}")
+
+print("\n Números Impares - Vezes sorteado:")
+for numero, contagem in contador_impar.items():
+    print(f"{numero}: {contagem}")                    
+
+print("\n Números Pares- Vezes sorteado:")
+for numero, contagem in contador_par.items():
+    print(f"{numero}: {contagem}")
+
+# Salvando em um arquivo txt
+with open("sorteio.txt","w") as arquivo:
+    arquivo.write("Números Impares - Vezes sorteado:\n")
+    for numero, contagem in contador_impar.items():
+        arquivo.write(f"{numero}: {contagem}\n")
+
+    arquivo.write("\nNúmeros Pares - Vezes sorteado:\n")
+    for numero, contagem in contador_par.items():
+        arquivo.write(f"{numero}: {contagem}\n")
