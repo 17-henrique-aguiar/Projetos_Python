@@ -1,8 +1,6 @@
-# Sorteio de Jogos com Contagem
+# Sorteio de Números com Contagem
 import random
-
-lista_jogos_para_começar = ["God Eater(PSP)", "Onimusha 2", "Castlevania - Lament of Innocence", "Baldur's Gate: Dark Alliance", "God Eater(PSP)", "Silent Hill", "Castlevania - Harmony of Dissonance", "Metroid - Zero Mission(GBA)", "Spider-Man 2 - Enter The Electro", "Tenchu - Stealth Assassins"]
-lista_jogos_para_continuar = ["Cars", "Donkey Kong Country", "Armored Core - Project Phantasma(PS1)"]
+lista_numeros = ["1", "7", "58", "93", "24", "", "", "", " ", ] {}Donkey Kong Country", "Armored Core - Project Phantasma(PS1)"]
 
 contador_começar = {}
 contador_continuar = {}
