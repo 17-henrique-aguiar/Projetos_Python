@@ -12,6 +12,6 @@ uploaded_file = st.file_uploader("Envie o arquivo CSV", type=["csv"])
 # Guardado no Session state para outras páginas acessarem
 if uploaded_file:
   st.session_state["df"] = pd.read_csv(uploaded_file)
-  st.session_state("Arquivo carregado com sucesso! Acesse as abas laterais.")
+  st.success("Arquivo carregado com sucesso! Acesse as abas laterais.")
 else:
   st.warning("Envie um arquivo CSV para começar.")
