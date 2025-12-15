@@ -31,4 +31,5 @@ else:
     if st.button("Converter para número"):
         df[col] = pd.to_numeric(df[col], errors="coerce")
         st.session_state["df"] = df
+
         st.success("Coluna convertida!")
